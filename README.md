@@ -5,11 +5,6 @@
   <p>An AI-powered visual development environment that instantly converts your rough whiteboard sketches and architectural diagrams into functional, production-ready React applications.</p>
 
   <p>
-    ▶️ <a href="https://youtu.be/AGeLCxv_Vjs"><strong>Watch Demo Video</strong></a> · 
-    🌐 <a href="https://logic-lens-mauve.vercel.app/"><strong>View Live Project</strong></a>
-  </p>
-
-  <p>
     <img src="https://img.shields.io/badge/Next.js-15-black?style=flat-square&logo=next.js" alt="Next.js" />
     <img src="https://img.shields.io/badge/React-19-blue?style=flat-square&logo=react" alt="React" />
     <img src="https://img.shields.io/badge/TypeScript-5.0-blue?style=flat-square&logo=typescript" alt="TypeScript" />
