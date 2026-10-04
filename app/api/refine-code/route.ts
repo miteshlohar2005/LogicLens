@@ -41,7 +41,7 @@ export async function POST(request: NextRequest) {
         const tryRefine = async (kIdx: 1 | 2) => {
           keyIndex = kIdx;
           const client = getStreamingClient(kIdx, userKey);
-          const model = client.getGenerativeModel({ model: "gemini-2.5-flash" });
+          const model = client.getGenerativeModel({ model: "gemini-1.5-pro" });
           return model.generateContentStream([prompt, imagePart]);
         };
 

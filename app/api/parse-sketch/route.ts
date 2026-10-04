@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
     }
 
     const userKey = request.headers.get("x-user-api-key") ?? undefined;
-    const model = await getModel("gemini-2.5-flash", undefined, userKey);
+    const model = await getModel("gemini-1.5-flash", undefined, userKey);
 
     const logicGraph = await withRetry(
       async () => {
