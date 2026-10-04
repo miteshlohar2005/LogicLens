@@ -1,0 +1,388 @@
+@import "tailwindcss";
+
+/* ============================================================
+   LogicLens Design System — Light Neo-Brutalism
+   ============================================================ */
+
+/* ── Custom Tailwind Theme Extensions ── */
+@theme inline {
+  /* Brand palette */
+  --color-brand-primary: #FFD166; /* Yellow */
+  --color-brand-secondary: #06D6A0; /* Green */
+  --color-brand-accent: #EF476F; /* Pink/Red */
+  --color-brand-cyan: #118AB2;
+
+  /* Surface tokens */
+  --color-surface-0: #FFFDF8; /* Off-white warm paper */
+  --color-surface-1: #FFFFFF;
+  --color-surface-2: #E5E5E5;
+  --color-surface-dark: #000000;
+
+  /* Border tokens */
+  --color-border-subtle: #000000;
+  --color-border-default: #000000;
+  --color-border-strong: #000000;
+  --color-border-brand: #000000;
+
+  /* Text tokens */
+  --color-text-primary: #000000;
+  --color-text-secondary: #333333;
+  --color-text-muted: #666666;
+  --color-text-brand: #000000;
+
+  /* Status colors */
+  --color-success: #06D6A0;
+  --color-warning: #FFD166;
+  --color-error: #EF476F;
+  --color-info: #118AB2;
+
+  /* Typography */
+  --font-sans: var(--font-sans), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), "Fira Code", monospace;
+
+  /* Box Shadows */
+  --shadow-brutal: 4px 4px 0px 0px rgba(0,0,0,1);
+  --shadow-brutal-lg: 8px 8px 0px 0px rgba(0,0,0,1);
+  --shadow-brutal-hover: 2px 2px 0px 0px rgba(0,0,0,1);
+}
+
+/* ── Root Variables ── */
+:root {
+  color-scheme: light;
+  
+  /* Borders */
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-full: 9999px; /* keep full for dots/circles */
+
+  /* Transitions */
+  --transition-fast: 100ms ease;
+  --transition-base: 150ms ease;
+}
+
+/* ── Base Reset & Body ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100%;
+  background-color: #FFFDF8;
+  background-image: 
+    linear-gradient(#e5e5e5 1px, transparent 1px),
+    linear-gradient(90deg, #e5e5e5 1px, transparent 1px);
+  background-size: 40px 40px;
+  color: #000;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ── Scrollbar Styling ── */
+::-webkit-scrollbar { width: 12px; height: 12px; }
+::-webkit-scrollbar-track { background: #FFFDF8; border-left: 2px solid #000; }
+::-webkit-scrollbar-thumb {
+  background: #FFD166;
+  border: 2px solid #000;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #EF476F;
+}
+
+/* ── Selection ── */
+::selection {
+  background: #000;
+  color: #FFD166;
+}
+
+/* ============================================================
+   Utility Classes (Neo-Brutalism)
+   ============================================================ */
+
+/* Brutal Card */
+.glass-card, .brutal-card {
+  background: #FFFFFF;
+  border: 3px solid #000000;
+  box-shadow: var(--shadow-brutal);
+}
+
+/* Brutal Panel */
+.glass-panel, .brutal-panel {
+  background: #FFFFFF;
+  border: 3px solid #000000;
+}
+
+/* Text styles */
+.text-gradient {
+  color: #000;
+  background: none;
+  -webkit-text-fill-color: #000;
+  text-shadow: 2px 2px 0px #FFD166;
+}
+
+/* Base brutal button */
+.btn-brand, .brutal-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 22px;
+  background: #FFD166;
+  color: #000;
+  font-weight: 800;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 3px solid #000;
+  cursor: pointer;
+  box-shadow: var(--shadow-brutal);
+  white-space: nowrap;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+}
+
+.btn-brand:hover, .brutal-btn:hover {
+  background: #EF476F;
+  color: #FFF;
+}
+
+.btn-brand:active, .brutal-btn:active {
+  transform: translate(4px, 4px);
+  box-shadow: none;
+}
+
+.btn-brand:disabled, .brutal-btn:disabled {
+  background: #E5E5E5;
+  color: #999;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: var(--shadow-brutal);
+}
+
+/* Ghost / Secondary button */
+.btn-ghost, .brutal-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: #FFF;
+  color: #000;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: 2px solid #000;
+  cursor: pointer;
+  box-shadow: 2px 2px 0px 0px #000;
+  transition: all var(--transition-fast);
+}
+.btn-ghost:hover, .brutal-btn-ghost:hover {
+  background: #06D6A0;
+  color: #000;
+}
+.btn-ghost:active, .brutal-btn-ghost:active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+
+/* Icon button */
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: #FFF;
+  color: #000;
+  border: 2px solid #000;
+  cursor: pointer;
+  box-shadow: 2px 2px 0px 0px #000;
+  transition: all var(--transition-fast);
+}
+.btn-icon:hover {
+  background: #118AB2;
+  color: #FFF;
+}
+.btn-icon:active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+
+/* Status badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border: 2px solid #000;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  box-shadow: 2px 2px 0px 0px #000;
+}
+.badge-success { background: #06D6A0; color: #000; }
+.badge-warning { background: #FFD166; color: #000; }
+.badge-error   { background: #EF476F; color: #FFF; }
+.badge-brand   { background: #FFD166; color: #000; }
+.badge-cyan    { background: #118AB2; color: #FFF; }
+
+/* ============================================================
+   Animations (Brutalist style)
+   ============================================================ */
+
+/* Stepped scanner sweep */
+@keyframes scan-sweep-brutal {
+  0%   { transform: translateY(-100%); opacity: 0; }
+  5%   { opacity: 1; }
+  95%  { opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+.animate-scan {
+  animation: scan-sweep-brutal 1.5s steps(30) forwards;
+}
+
+/* Blink */
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+.cursor-blink::after {
+  content: '█';
+  color: #000;
+  animation: blink 1s steps(1) infinite;
+  margin-left: 2px;
+}
+
+/* Fade up entrance (harder) */
+@keyframes pop-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up {
+  animation: pop-up 0.3s cubic-bezier(0, 0, 0.2, 1) forwards;
+}
+
+/* ============================================================
+   Component-specific styles
+   ============================================================ */
+
+/* Divider */
+.divider {
+  width: 100%;
+  height: 3px;
+  background: #000;
+}
+
+/* Dot indicator */
+.dot-live {
+  width: 10px;
+  height: 10px;
+  background: #EF476F;
+  border: 2px solid #000;
+  display: inline-block;
+  animation: blink 1s steps(1) infinite;
+}
+
+/* Tooltip */
+.tooltip {
+  position: relative;
+}
+.tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #000;
+  color: #FFF;
+  font-size: 0.75rem;
+  font-weight: bold;
+  white-space: nowrap;
+  padding: 4px 10px;
+  border: 2px solid #000;
+  pointer-events: none;
+  opacity: 0;
+  transition: none;
+}
+.tooltip:hover::after { opacity: 1; }
+
+/* ============================================================
+   Excalidraw Isolation — Surgical Tailwind v4 Preflight Fixes
+   ============================================================ */
+
+/* FIX 1: Tailwind preflight sets `svg { display: block }` globally. */
+.excalidraw svg {
+  display: inline-block;
+  vertical-align: initial;
+}
+
+/* FIX 2: Tailwind preflight zero-resets margin, padding, border on *. */
+.excalidraw *,
+.excalidraw *::before,
+.excalidraw *::after {
+  margin: revert;
+  padding: revert;
+  border: revert;
+  box-sizing: revert;
+}
+
+/* FIX 3: Tailwind preflight strips button background, border-radius, etc. */
+.excalidraw button,
+.excalidraw input,
+.excalidraw select,
+.excalidraw textarea {
+  font: revert;
+  color: revert;
+  border-radius: revert;
+  background-color: revert;
+  opacity: revert;
+  letter-spacing: revert;
+}
+
+/* FIX 4: Tailwind preflight resets list-style on ol/ul/menu. */
+.excalidraw ol,
+.excalidraw ul,
+.excalidraw menu {
+  list-style: revert;
+}
+
+/* FIX 5: Tailwind preflight resets h1-h6 font-size/weight to inherit. */
+.excalidraw h1,
+.excalidraw h2,
+.excalidraw h3,
+.excalidraw h4,
+.excalidraw h5,
+.excalidraw h6 {
+  font-size: revert;
+  font-weight: revert;
+}
+
+/* Ensure Excalidraw fills its container properly */
+.excalidraw {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.excalidraw canvas {
+  touch-action: none;
+}
+
+/* ============================================================
+   Sandpack Isolation
+   ============================================================ */
+.brutal-sandpack-container .sp-wrapper,
+.brutal-sandpack-container .sp-layout,
+.brutal-sandpack-container .sp-stack,
+.brutal-sandpack-container .sp-preview-container,
+.brutal-sandpack-container .sp-preview-iframe {
+  height: 100% !important;
+  min-height: 100% !important;
+}
