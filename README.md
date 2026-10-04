@@ -15,15 +15,6 @@
 
 ---
 
-## 🚀 Demo & Live Deployment
-
-- ▶️ **Demo Video:** [https://youtu.be/AGeLCxv_Vjs](https://youtu.be/AGeLCxv_Vjs)
-- 🌐 **Live Application:** [https://logic-lens-mauve.vercel.app/](https://logic-lens-mauve.vercel.app/)
-
-*(Note: If testing locally, please ensure you supply your own Gemini API keys in `.env.local`)*
-
----
-
 ## 💡 What LogicLens Does
 
 **LogicLens bridge the gap between ideation and implementation.** 
